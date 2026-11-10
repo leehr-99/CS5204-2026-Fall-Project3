@@ -333,27 +333,27 @@ $ ./wclient localhost 8003 /<Name_Of_File>
 We recommend understanding how the code that we gave you works.  We provide
 the following files:
 
-- [`wserver.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/wserver.c): Contains `main()` for the web server and the basic serving loop.
-- [`request.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/request.c): Performs most of the work for handling requests in the basic
+- **wserver.c**: Contains `main()` for the web server and the basic serving loop.
+- **request.c**: Performs most of the work for handling requests in the basic
   web server. Start at `request_handle()` and work through the logic from
   there. 
-- [`io_helper.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/io_helper.h) and [`io_helper.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/io_helper.c): Contains wrapper functions for the system calls invoked by
+- **io_helper.h** and **io_helper.c**: Contains wrapper functions for the system calls invoked by
   the basic web server and client. The convention is to add `_or_die` to an
   existing call to provide a version that either succeeds or exits. For
   example, the `open()` system call is used to open a file, but can fail for a
   number of reasons. The wrapper, `open_or_die()`, either successfully opens a
   file or exists upon failure. 
-- [`wclient.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/wclient.c): Contains main() and the support routines for the very simple
+- **wclient.c**: Contains main() and the support routines for the very simple
   web client. To test your server, you may want to change this code so that it
   can send simultaneous requests to your server. By launching `wclient`
   multiple times, you can test how your server handles concurrent requests.
-- [`Makefile`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/Makefile): We also provide you with a sample Makefile that creates
+- **Makefile**: We also provide you with a sample Makefile that creates
   `wserver`, `wclient`. You can type make to create all of 
   these programs. You can type make clean to remove the object files and the
   executables. You can type make server to create just the server program,
   etc. As you create new files, you will need to add them to the Makefile.
-- [`thread_pool.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.c) and [`thread_pool.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.h): Contains basic function structure of thread pool. You can use the existing backbone of the structure to implement multi-thread pool for webserver or you can start from your own structure. But, you must implement your thread pool on here to get a point.
-- [`scheduler.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.c) and [`scheduler.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.h): Contains basic function structure of scheduler. You can use the existing backbone of the structure to implement SFF scheduler for webserver or you can start from your own structure. But, you must implement your scheduler on here to get a point.
+- **thread_pool.c** and **thread_pool.h**: Contains basic function structure of thread pool. You can use the existing backbone of the structure to implement multi-thread pool for webserver or you can start from your own structure. But, you must implement your thread pool on here to get a point.
+- **scheduler.c** and **scheduler.h**: Contains basic function structure of scheduler. You can use the existing backbone of the structure to implement SFF scheduler for webserver or you can start from your own structure. But, you must implement your scheduler on here to get a point.
 - **data**: Create a `data` directory and populate it with dummy files of different sizes to test your multi-threaded web server and SFF scheduler. For example, on Linux, you can use `truncate` to create test files:
 
   ```bash
