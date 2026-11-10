@@ -354,7 +354,20 @@ the following files:
   etc. As you create new files, you will need to add them to the Makefile.
 - [`thread_pool.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.c) and [`thread_pool.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.h): Contains basic function structure of thread pool. You can use the existing backbone of the structure to implement multi-thread pool for webserver or you can start from your own structure. But, you must implement your thread pool on here to get a point.
 - [`scheduler.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.c) and [`scheduler.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.h): Contains basic function structure of scheduler. You can use the existing backbone of the structure to implement SFF scheduler for webserver or you can start from your own structure. But, you must implement your scheduler on here to get a point.
-- [`data`](https://github.com/rufquf2628/CS5204-Spring25/tree/main/src/data): The `data` directory contains some dummy data with various file sizes. You can use it to test your multi-thread webserver and SFF scheduler. You should set this directory as a basedir of the server. `prompt> ./wserver -d ./data`
+- - **data**: Create a `data` directory and populate it with dummy files of different sizes to test your multi-threaded web server and SFF scheduler. For example, on Linux, you can use `truncate` to create test files:
+
+  ```bash
+  mkdir -p data
+  truncate -s 1K data/small.txt
+  truncate -s 100K data/medium.txt
+  truncate -s 10M data/large.txt
+  ```
+
+  Set this directory as the server's base directory when running the server:
+
+  ```bash
+  ./wserver -d ./data
+  ```
 
 - `spin.cgi`: It is a dynamic execution file that client can request the server to spin in some seconds. For example, you can request the server to spin for 5 seconds by command line `./wclient localhost 8000 /spin.cgi?5`. Then, your server (or worker) will spin for 5 second and not accepting any request during that time.
 
