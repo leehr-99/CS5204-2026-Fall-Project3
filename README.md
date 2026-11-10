@@ -354,7 +354,7 @@ the following files:
   etc. As you create new files, you will need to add them to the Makefile.
 - [`thread_pool.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.c) and [`thread_pool.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/thread_pool.h): Contains basic function structure of thread pool. You can use the existing backbone of the structure to implement multi-thread pool for webserver or you can start from your own structure. But, you must implement your thread pool on here to get a point.
 - [`scheduler.c`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.c) and [`scheduler.h`](https://github.com/rufquf2628/CS5204-Spring25/blob/main/src/scheduler.h): Contains basic function structure of scheduler. You can use the existing backbone of the structure to implement SFF scheduler for webserver or you can start from your own structure. But, you must implement your scheduler on here to get a point.
-- - **data**: Create a `data` directory and populate it with dummy files of different sizes to test your multi-threaded web server and SFF scheduler. For example, on Linux, you can use `truncate` to create test files:
+- **data**: Create a `data` directory and populate it with dummy files of different sizes to test your multi-threaded web server and SFF scheduler. For example, on Linux, you can use `truncate` to create test files:
 
   ```bash
   mkdir -p data
